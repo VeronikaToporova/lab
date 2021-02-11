@@ -33,6 +33,24 @@
                 Click="ExitButton_Click"
                 Style="{StaticResource BrownButtonStyle}"/>
         </StackPanel>
+        <StackPanel 
+            Orientation="Vertical" 
+            VerticalAlignment="Center">
+            <Label Content="Цена: "/>
+            <RadioButton 
+        GroupName="Price"
+        Tag="1"
+        Content="по возрастанию" 
+        IsChecked="True" 
+        Checked="RadioButton_Checked"
+        VerticalContentAlignment="Center"/>
+            <RadioButton 
+        GroupName="Price" 
+        Tag="2"
+        Content="по убыванию" 
+        Checked="RadioButton_Checked"
+        VerticalContentAlignment="Center"/>
+        </StackPanel>
         <Image 
         Margin="5"
         Source="./NewFolder1/service_logo.png" 
