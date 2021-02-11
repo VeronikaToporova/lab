@@ -77,7 +77,6 @@ C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\bin\Debug\EntityFramework.SqlServer
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\bin\Debug\EntityFramework.xml
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\bin\Debug\EntityFramework.SqlServer.xml
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\bin\Debug\ru\EntityFramework.resources.dll
-C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csprojAssemblyReference.cache
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\MainWindow.g.cs
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\windows\InputBoxWindow.g.cs
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\App.g.cs

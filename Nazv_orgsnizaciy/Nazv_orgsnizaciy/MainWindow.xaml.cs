@@ -27,13 +27,16 @@ namespace Nazv_orgsnizaciy
         private List<Service> _ServiceList;
         public List<Service> ServiceList
         {
-            get { 
+            get {
+                var FilteredServiceList = _ServiceList.FindAll(item =>
+                item.DiscountFloat >= CurrentDiscountFilter.Item1 &&
+                item.DiscountFloat < CurrentDiscountFilter.Item2);
                 if (SortPriceAscending)
-                    return _ServiceList
+                    return FilteredServiceList
                         .OrderBy(item => Double.Parse(item.CostWithDiscount))
                         .ToList();
                 else
-                    return _ServiceList
+                    return FilteredServiceList
                         .OrderByDescending(item => Double.Parse(item.CostWithDiscount))
                         .ToList();
 
@@ -123,6 +126,54 @@ namespace Nazv_orgsnizaciy
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             SortPriceAscending = (sender as RadioButton).Tag.ToString() == "1";
+        }
+
+
+        private List<Tuple<string, double, double>> FilterByDiscountValuesList =
+        new List<Tuple<string, double, double>>() {
+        Tuple.Create("Все записи", 0d, 1d),
+        Tuple.Create("от 0% до 5%", 0d, 0.05d),
+        Tuple.Create("от 5% до 15%", 0.05d, 0.15d),
+        Tuple.Create("от 15% до 30%", 0.15d, 0.3d),
+        Tuple.Create("от 30% до 70%", 0.3d, 0.7d),
+        Tuple.Create("от 70% до 100%", 0.7d, 1d)
+        };
+
+        public List<string> FilterByDiscountNamesList
+        {
+            get
+            {
+                return FilterByDiscountValuesList
+                    .Select(item => item.Item1)
+                    .ToList();
+            }
+        }
+
+        private Tuple<double, double> _CurrentDiscountFilter = Tuple.Create(double.MinValue, double.MaxValue);
+
+        public Tuple<double, double> CurrentDiscountFilter
+        {
+            get
+            {
+                return _CurrentDiscountFilter;
+            }
+            set
+            {
+                _CurrentDiscountFilter = value;
+                if (PropertyChanged != null)
+                {
+                    // при изменении фильтра список перерисовывается
+                    PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+                }
+            }
+        }
+
+        private void DiscountFilterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CurrentDiscountFilter = Tuple.Create(
+                FilterByDiscountValuesList[DiscountFilterComboBox.SelectedIndex].Item2,
+                FilterByDiscountValuesList[DiscountFilterComboBox.SelectedIndex].Item3
+            );
         }
 
     }

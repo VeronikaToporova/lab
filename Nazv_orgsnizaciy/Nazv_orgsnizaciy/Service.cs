@@ -79,5 +79,14 @@ namespace Nazv_orgsnizaciy
                 return HasDiscount ? "None" : "Strikethrough";
             }
         }
+
+        public double DiscountFloat
+        {
+            get
+            {
+                return Convert.ToSingle(Discount ?? 0);
+            }
+        }
+
     }
 }
