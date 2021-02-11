@@ -59,7 +59,11 @@
          SelectedIndex="0"
         SelectionChanged="DiscountFilterComboBox_SelectionChanged"
         ItemsSource="{Binding FilterByDiscountNamesList}"/>
-
+            <Label Content="Поиск"/>
+            <TextBox
+                    x:Name="SearchFilterTextBox"
+                    VerticalAlignment="Center"
+                    KeyUp="TextBox_KeyUp"/>
         </StackPanel>
         <Image 
         Margin="5"

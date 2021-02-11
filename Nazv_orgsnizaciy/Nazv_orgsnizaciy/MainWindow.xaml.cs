@@ -31,6 +31,12 @@ namespace Nazv_orgsnizaciy
                 var FilteredServiceList = _ServiceList.FindAll(item =>
                 item.DiscountFloat >= CurrentDiscountFilter.Item1 &&
                 item.DiscountFloat < CurrentDiscountFilter.Item2);
+
+                if (SearchFilter != "")
+                    FilteredServiceList = FilteredServiceList.Where(item =>
+                        item.Title.IndexOf(SearchFilter, StringComparison.OrdinalIgnoreCase) != -1 ||
+                        item.DescriptionString.IndexOf(SearchFilter, StringComparison.OrdinalIgnoreCase) != -1).ToList();
+
                 if (SortPriceAscending)
                     return FilteredServiceList
                         .OrderBy(item => Double.Parse(item.CostWithDiscount))
@@ -168,9 +174,31 @@ namespace Nazv_orgsnizaciy
             }
         }
 
+
+        private string _SearchFilter = "";
+        public string SearchFilter
+        {
+            get { return _SearchFilter; }
+            set
+            {
+                _SearchFilter = value;
+                if (PropertyChanged != null)
+                {
+                    // при изменении фильтра список перерисовывается
+                    PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+                }
+            }
+        }
+
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            SearchFilter = SearchFilterTextBox.Text;
+        }
+
         private void DiscountFilterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CurrentDiscountFilter = Tuple.Create(
+            if (DiscountFilterComboBox.SelectedIndex >= 0)
+                CurrentDiscountFilter = Tuple.Create(
                 FilterByDiscountValuesList[DiscountFilterComboBox.SelectedIndex].Item2,
                 FilterByDiscountValuesList[DiscountFilterComboBox.SelectedIndex].Item3
             );

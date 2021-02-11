@@ -87,6 +87,12 @@ namespace Nazv_orgsnizaciy
                 return Convert.ToSingle(Discount ?? 0);
             }
         }
-
+        public string DescriptionString
+        {
+            get
+            {
+                return Description ?? "";
+            }
+        }
     }
 }
