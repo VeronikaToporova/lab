@@ -35,7 +35,7 @@
         </StackPanel>
         <StackPanel 
             Orientation="Vertical" 
-            VerticalAlignment="Center">
+            VerticalAlignment="Center" Height="212" Margin="0,145,0,62">
             <Label Content="Цена: "/>
             <RadioButton 
         GroupName="Price"
@@ -50,7 +50,7 @@
         Content="по убыванию" 
         Checked="RadioButton_Checked"
         VerticalContentAlignment="Center"/>
-            
+
             <Label Content="Фильтр по скидке: "
         Margin="10,0,0,0"
         VerticalAlignment="Center"/>
@@ -64,12 +64,15 @@
                     x:Name="SearchFilterTextBox"
                     VerticalAlignment="Center"
                     KeyUp="TextBox_KeyUp"/>
+            <Label Content="{Binding ServicesCount}"/>
+            <Label Content="{Binding FilteredServicesCount}"/>
         </StackPanel>
         <Image 
         Margin="5"
         Source="./NewFolder1/service_logo.png" 
         VerticalAlignment="Top"/>
         <DataGrid 
+            x:Name="MainDataGrid"
             Grid.Column="1"
             ItemsSource="{Binding ServiceList}"
              CanUserAddRows="false"
@@ -104,7 +107,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-               
+
                 <DataGridTextColumn 
                     Width="150"
                     Header="Продолжительность"
@@ -121,7 +124,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-               
+
 
                 <DataGridTextColumn 
             Width="60"
@@ -145,7 +148,7 @@
                                 Name="EditButton"/>
                                 <Button 
                                 Content="Удалить" 
-                                Name="DeleteButton"/>
+                                Name="DeleteButton" Click="DeleteButtonClick"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -157,7 +160,7 @@
 
 
         </DataGrid>
-        
+
     </Grid>
-    
+
 </Window>

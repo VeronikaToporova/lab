@@ -126,6 +126,8 @@ namespace Nazv_orgsnizaciy
                 if (PropertyChanged != null)
                 {
                     PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("ServicesCount"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("FilteredServicesCount"));
                 }
             }
         }
@@ -170,6 +172,8 @@ namespace Nazv_orgsnizaciy
                 {
                     // при изменении фильтра список перерисовывается
                     PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("ServicesCount"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("FilteredServicesCount"));
                 }
             }
         }
@@ -186,6 +190,8 @@ namespace Nazv_orgsnizaciy
                 {
                     // при изменении фильтра список перерисовывается
                     PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("ServicesCount"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("FilteredServicesCount"));
                 }
             }
         }
@@ -204,5 +210,36 @@ namespace Nazv_orgsnizaciy
             );
         }
 
+        public int ServicesCount
+        {
+            get
+            {
+                return _ServiceList.Count;
+            }
+        }
+        public int FilteredServicesCount
+        {
+            get
+            {
+                return ServiceList.Count;
+            }
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            var item = MainDataGrid.SelectedItem as Service;
+
+            if (item.ClientService.Count > 0)
+            {
+                MessageBox.Show("Нельзя удалять услугу, она уже оказана");
+                return;
+            }
+
+            Core.DB.Service.Remove(item);
+
+            Core.DB.SaveChanges();
+
+            ServiceList = Core.DB.Service.ToList();
+        }
     }
 }
