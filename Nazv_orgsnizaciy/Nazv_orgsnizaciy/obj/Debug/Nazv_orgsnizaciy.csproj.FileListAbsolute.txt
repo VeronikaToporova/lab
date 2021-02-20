@@ -120,3 +120,4 @@ E:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csprojAs
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csprojAssemblyReference.cache
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\ServiceWindow.g.cs
 C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\ServiceWindow.baml
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csproj.CoreCompileInputs.cache

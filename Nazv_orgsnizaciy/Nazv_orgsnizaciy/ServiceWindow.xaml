@@ -23,13 +23,12 @@
             <Label Content="Цена"/>
             <TextBox Text="{Binding CurrentService.Cost}"/>
             <Label Content="Промежуток времени"/>
-            <TextBox Text="{Binding CurrentService.DurartionlnSeconds}"/>
+            <TextBox Text="{Binding CurrentService.DurationInSeconds}"/>
             <Label Content="Описание"/>
             <TextBox Text="{Binding CurrentService.Description}"/>
             <Label Content="Скидка"/>
             <TextBox Text="{Binding CurrentService.Discount}"/>
-            <Label Content="Путь к картинке"/>
-            <TextBox Text="{Binding CurrentService.MainImagePath}"/>
+            
             <Button Margin="5" HorizontalAlignment="Left" Click="GetImageButton_Click">Получить картинку</Button>
             <Button Margin="5" HorizontalAlignment="Left" Click="SaveButton_Click">Сохранить</Button>
         </StackPanel>
