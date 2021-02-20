@@ -117,3 +117,6 @@ E:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csproj.C
 E:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.exe
 E:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.pdb
 E:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csprojAssemblyReference.cache
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csprojAssemblyReference.cache
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\ServiceWindow.g.cs
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\ServiceWindow.baml

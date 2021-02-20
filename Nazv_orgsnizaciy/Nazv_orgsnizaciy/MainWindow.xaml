@@ -21,7 +21,7 @@
             VerticalAlignment="Bottom">
             <Button
                 Content="Добавить услугу"
-                Visibility="{Binding AdminVisibility}"/>
+                Visibility="{Binding AdminVisibility}" Click="AddService_Click"/>
             <Button
                 Content="{Binding AdminModeCaption}"
                 Name="AdminButton"
@@ -145,7 +145,7 @@
                             Orientation="Horizontal">
                                 <Button 
                                 Content="Редактировать" 
-                                Name="EditButton"/>
+                                Name="EditButton" Click="EditButon_Click"/>
                                 <Button 
                                 Content="Удалить" 
                                 Name="DeleteButton" Click="DeleteButtonClick"/>

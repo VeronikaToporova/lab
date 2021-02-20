@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\
 Nazv_orgsnizaciy
 none
 false
 DEBUG;TRACE
-E:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\App.xaml
-2-1983797629
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\App.xaml
+3-730378922
 2-157003947
-22-134615909
-18-1651174982
-MainWindow.xaml;windows\InputBoxWindow.xaml;
+23-503875520
+18-319328130
+MainWindow.xaml;ServiceWindow.xaml;windows\InputBoxWindow.xaml;
 
 True
 

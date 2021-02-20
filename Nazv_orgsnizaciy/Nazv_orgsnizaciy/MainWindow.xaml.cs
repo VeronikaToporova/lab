@@ -241,5 +241,32 @@ namespace Nazv_orgsnizaciy
 
             ServiceList = Core.DB.Service.ToList();
         }
+
+        private void EditButon_Click(object sender, RoutedEventArgs e)
+        {
+            var SelectedService = MainDataGrid.SelectedItem as Service;
+            var EditServiceWindow = new ServiceWindow(SelectedService);
+            if ((bool)EditServiceWindow.ShowDialog())
+            {
+                // при успешном завершении не забываем перерисовать список услуг
+                PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+                // и еще счетчики - их добавьте сами
+            }
+        }
+
+        private void AddService_Click(object sender, RoutedEventArgs e)
+        {
+            // создаем новую услугу
+            var NewService = new Service();
+
+            var NewServiceWindow = new ServiceWindow(NewService);
+            if ((bool)NewServiceWindow.ShowDialog())
+            {
+                // список услуг нужно перечитать с сервера
+                ServiceList = Core.DB.Service.ToList();
+                PropertyChanged(this, new PropertyChangedEventArgs("FilteredProductsCount"));
+                PropertyChanged(this, new PropertyChangedEventArgs("ProductsCount"));
+            }
+        }
     }
 }
