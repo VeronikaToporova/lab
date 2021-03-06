@@ -147,6 +147,11 @@
                                 Content="Редактировать" 
                                 Name="EditButton" Click="EditButon_Click"/>
                                 <Button 
+                                        Content="Записаться" 
+                                        Name="SubscrideButton"
+                                        
+                                        Click="SubscrideButton_Click"/>
+                                <Button 
                                 Content="Удалить" 
                                 Name="DeleteButton" Click="DeleteButtonClick"/>
                             </StackPanel>

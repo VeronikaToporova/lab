@@ -1,0 +1,48 @@
+﻿<Window x:Class="Nazv_orgsnizaciy.windows.ClientServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nazv_orgsnizaciy.windows"
+        mc:Ignorable="d"
+        Title="ClientServiceWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="5">
+            <Label Content="{Binding CurrentClientService.Service.Title}"/>
+            <Label Content="Клиент"/>
+            <!-- 
+        Для выбора клиента из списка используем компонент ComboBox
+        ItemsSource - список клиентов
+        SelectedItem - сюда запомнится выбранный клиент. Обратите внимание, сохраняем
+            выбор в виртуальное поле Client
+        FullName - самописанный геттер, возвращающий полное ФИО клиента    
+    -->
+            <ComboBox 
+        ItemsSource="{Binding ClientList}"
+        SelectedItem="{Binding CurrentClientService.Client}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding FullName}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Услуга"/>
+            <!-- 
+        Выбор услуги аналогичен
+    -->
+            
+            <Label Content="Время записи"/>
+            <!-- 
+        Вот тут засада - в WPF нет своей реализации DateTimePicker
+        - Использовать сторонние библиотеки нам нельзя - нет интернета
+        - Использовать компонент из Windows.Form не советуют, не будет работать биндинг
+        Поэтому я реализую через строку с геттером и сеттером. 
+        В сеттере мы с помощью регулярного выражения разберем эту строку и запишем нормальную
+        дату в поле StartTime
+    -->
+            <TextBox Text="{Binding CurrentClientService.StartTimeText}"/>
+            <Label Content="Комментарий"/>
+            <TextBox Text="{Binding CurrentClientService.Comment}"/>
+        </StackPanel>
+    </Grid>
+</Window>

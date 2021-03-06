@@ -268,5 +268,13 @@ namespace Nazv_orgsnizaciy
                 PropertyChanged(this, new PropertyChangedEventArgs("ProductsCount"));
             }
         }
-    }
+
+        private void SubscrideButton_Click(object sender, RoutedEventArgs e)
+        {
+            var SelectedService = MainDataGrid.SelectedItem as Service;
+            var SubscrideServiceWindow = new windows.ClientServiceWindow(SelectedService);
+            SubscrideServiceWindow.ShowDialog();
+
+        }
+     }
 }
