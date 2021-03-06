@@ -12,10 +12,10 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Image 
-            Margin="3"
-            Height="290" 
-            Width="290" 
-            Source="{Binding ImageUri}" />
+            
+            Height="280" 
+            Width="280" 
+            Source="{Binding CurrentService.ImageUri}" />
 
         <StackPanel Margin="5"  Grid.Column="1">
             <Label Content="Наименование услуги"/>

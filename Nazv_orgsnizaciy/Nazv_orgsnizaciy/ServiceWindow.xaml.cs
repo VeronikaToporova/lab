@@ -28,6 +28,7 @@ namespace Nazv_orgsnizaciy
         public ServiceWindow(Service service)
         {
             InitializeComponent();
+            DataContext = this;
             CurrentService = service;   
         }
 
