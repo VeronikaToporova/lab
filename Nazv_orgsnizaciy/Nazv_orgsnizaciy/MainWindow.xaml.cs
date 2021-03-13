@@ -45,9 +45,12 @@ namespace Nazv_orgsnizaciy
                     return FilteredServiceList
                         .OrderByDescending(item => Double.Parse(item.CostWithDiscount))
                         .ToList();
-
             }
-            set { _ServiceList = value; }
+            set {
+                _ServiceList = value;
+              if (PropertyChanged != null)
+               PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+            }
         }
         public MainWindow()
         {
@@ -214,13 +217,23 @@ namespace Nazv_orgsnizaciy
         {
             get
             {
+                
                 return _ServiceList.Count;
+
+            }
+            set
+            {
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("_ServiceList"));
+                
             }
         }
+        
         public int FilteredServicesCount
         {
             get
             {
+                PropertyChanged(this, new PropertyChangedEventArgs("ServiceList.Count"));
                 return ServiceList.Count;
             }
         }
