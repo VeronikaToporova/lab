@@ -150,6 +150,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>toporova.edmx</DependentUpon>
     </Compile>
+    <Compile Include="windows\BlizhZapisy.xaml.cs">
+      <DependentUpon>BlizhZapisy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\ClientServiceWindow.xaml.cs">
       <DependentUpon>ClientServiceWindow.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ServiceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\BlizhZapisy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

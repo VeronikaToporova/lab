@@ -22,6 +22,11 @@ namespace Nazv_orgsnizaciy
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     //
+    public class Globals
+    {
+        public static BlizhZapisy BlizhZapisy_Open = null;
+    }
+
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private List<Service> _ServiceList;
@@ -253,6 +258,8 @@ namespace Nazv_orgsnizaciy
             Core.DB.SaveChanges();
 
             ServiceList = Core.DB.Service.ToList();
+            PropertyChanged(this, new PropertyChangedEventArgs("ServicesCount"));
+            PropertyChanged(this, new PropertyChangedEventArgs("FilteredServicesCount"));
         }
 
         private void EditButon_Click(object sender, RoutedEventArgs e)
@@ -279,6 +286,8 @@ namespace Nazv_orgsnizaciy
                 ServiceList = Core.DB.Service.ToList();
                 PropertyChanged(this, new PropertyChangedEventArgs("FilteredProductsCount"));
                 PropertyChanged(this, new PropertyChangedEventArgs("ProductsCount"));
+                PropertyChanged(this, new PropertyChangedEventArgs("ServicesCount"));
+                PropertyChanged(this, new PropertyChangedEventArgs("FilteredServicesCount"));
             }
         }
 
@@ -289,5 +298,19 @@ namespace Nazv_orgsnizaciy
             SubscrideServiceWindow.ShowDialog();
 
         }
-     }
+
+        private void NearestButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Globals.BlizhZapisy_Open == null)
+            {
+                Globals.BlizhZapisy_Open = new windows.BlizhZapisy();
+                Globals.BlizhZapisy_Open.Show();
+            }
+            else
+            {
+                Globals.BlizhZapisy_Open.Activate();
+            }
+
+        }
+    }
 }

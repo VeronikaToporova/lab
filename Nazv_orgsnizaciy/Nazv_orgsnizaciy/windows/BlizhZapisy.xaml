@@ -1,0 +1,46 @@
+﻿<Window x:Class="Nazv_orgsnizaciy.windows.BlizhZapisy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nazv_orgsnizaciy.windows"
+        mc:Ignorable="d"
+        Title="BlizhZapisy" Closing="BlizhZapisy_CLosing" Height="450" Width="800">
+    <Grid>
+        <DataGrid 
+                x:Name="MainDataGrid"
+             
+                ItemsSource="{Binding CLiientList}" 
+                CanUserAddRows="false"
+                AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                Width="200"
+                Header="Времени до начала услуг"
+                Binding="{Binding EndTime}"/>
+                <DataGridTextColumn
+                Width="200"
+                Header="Время записи"
+                Binding="{Binding StartTime}"/>
+                <DataGridTextColumn
+                Width="200"
+                Header="Наименование услуг"
+                Binding="{Binding Service.Title}"/>
+                <DataGridTextColumn
+                Width="200"
+                Header="ФИО"
+                Binding="{Binding Client.FullName}"/>
+                <DataGridTextColumn
+                Width="200"
+                Header="Email"
+                Binding="{Binding Client.Email}"/>
+                <DataGridTextColumn
+                Width="200"
+                Header="Phone"
+                Binding="{Binding Client.Phone}"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</Window>

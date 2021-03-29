@@ -197,3 +197,5 @@ C:\Git2\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csproj.
 C:\Git2\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.csproj.CopyComplete
 C:\Git2\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.exe
 C:\Git2\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\Nazv_orgsnizaciy.pdb
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\windows\BlizhZapisy.g.cs
+C:\Git\lab\Nazv_orgsnizaciy\Nazv_orgsnizaciy\obj\Debug\windows\BlizhZapisy.baml

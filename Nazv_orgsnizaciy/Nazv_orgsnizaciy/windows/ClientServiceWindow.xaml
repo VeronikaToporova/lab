@@ -43,6 +43,7 @@
             <TextBox Text="{Binding CurrentClientService.StartTimeText}"/>
             <Label Content="Комментарий"/>
             <TextBox Text="{Binding CurrentClientService.Comment}"/>
+            <Button Click="SaveButton_Click" Width="100" HorizontalAlignment="Left">Сохранить</Button>
         </StackPanel>
     </Grid>
 </Window>
